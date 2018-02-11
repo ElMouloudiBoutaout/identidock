@@ -1,0 +1,14 @@
+identidock:
+  build: .
+  expose:
+    - "9090"
+  environment:
+    ENV: PROD
+  volumes:
+    - ./app:/app
+  links:
+    - dnmonster
+
+dnmonster:
+  image: amouat/dnmonster:1.0
+  
